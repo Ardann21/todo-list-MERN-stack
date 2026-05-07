@@ -1,0 +1,6 @@
+{
+  "name": "Frontend To-Do App",
+  "description": "A frontend-only React to-do list application, ready to be hooked up to a backend.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
