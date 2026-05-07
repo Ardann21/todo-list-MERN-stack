@@ -13,7 +13,7 @@ export default function App() {
   const [newTodoTitle, setNewTodoTitle] = useState('');
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/todos")
+    fetch("/api/todos")
       .then((res) => res.json())
       .then((data) => setTodos(data))
       .catch((err) => console.log(err));
@@ -23,7 +23,7 @@ export default function App() {
     if (!newTodoTitle.trim()) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/todos", {
+      const res = await fetch("/api/todos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export default function App() {
     try {
       const todo = todos.find((t) => t._id === id);
 
-      const res = await fetch(`http://localhost:5000/api/todos/${id}`, {
+      const res = await fetch(`/api/todos/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export default function App() {
 
   const deleteTodo = async (id: string) => {
     try {
-      await fetch(`http://localhost:5000/api/todos/${id}`, {
+      await fetch(`/api/todos/${id}`, {
         method: "DELETE",
       });
 
